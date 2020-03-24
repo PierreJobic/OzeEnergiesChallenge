@@ -23,7 +23,7 @@ def main(net, method, LR=1e-2, EPOCHS=15, dataloader=None, add_time=False, norma
                               shuffle=True,
                               num_workers=NUM_WORKERS)
       
-        m, M = dataloader.dataset.m, dataloader.dataset.M
+    m, M = dataloader.dataset.m, dataloader.dataset.M
 
     #net = TestRecurrentNet('lstm', input_dim=38, batch_first=True)
 
@@ -40,14 +40,13 @@ def main(net, method, LR=1e-2, EPOCHS=15, dataloader=None, add_time=False, norma
 
     # Save
     if save_result:
-      dataset_eval = OzeEvaluationDataset(dataset_x_path="data/x_test.csv", 
-                                        labels_path="data/labels.json", 
-                                        add_time=True)
-      save(dataset_eval, net, m, M, method, denormalize=normalize)
-
+        dataset_eval = OzeEvaluationDataset(dataset_x_path="../data/x_test.csv", 
+                                            labels_path="../data/labels.json", 
+                                            add_time=True)
+        save(dataset_eval, net, m, M, method, denormalize=normalize)
 
 
 if __name__ == '__main__':
     net = BenchmarkLSTM(input_dim = 37)
-	method = 'BenchmarkLSTM'
-	main(net, method, save_result=False)
+    method = 'BenchmarkLSTM'
+    main(net, method, save_result=False)
