@@ -1,3 +1,5 @@
+# Dataset
+
 Each sample in the dataset is associated with a unique id accross the input and output csv file. It corresponds to a month worth of data sampled every hour, i.e. each time series is 28 x 24 = 672 long. The following is a short description of each variable found in the dataset. A list of these variables, in the same order as saved in the csv file, can be found attached to the challenge.
 
 In the input csv file, we can find information regarding the building itself, which remain constant through time, as well as temperature and occupation as time series. For each sample, we have:
